@@ -1,0 +1,393 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playwrite+NL:wght@100..400&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+
+.container {
+  width: 450px;
+  height: 600px;
+  background: #f8f9fd;
+  background: linear-gradient(
+    0deg,
+    rgb(255, 255, 255) 0%,
+    rgb(244, 247, 251) 100%
+  );
+  border-radius: 40px;
+  padding: 25px 35px;
+  border: 5px solid rgb(255, 255, 255);
+  box-shadow: rgba(133, 189, 215, 0.8784313725) 0px 30px 30px -20px;
+  margin: 20px;
+  font-family: Poppins;
+  position: absolute;
+  z-index: 1000;
+  animation: flyIn 1s ease-out forwards;
+}
+
+.heading {
+  text-align: center;
+  font-weight: 900;
+  font-size: 30px;
+  color: rgb(16, 137, 211);
+}
+
+.form {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.form .input {
+  width: 100%;
+  background: white;
+  border: none;
+  padding: 15px 20px;
+  border-radius: 20px;
+  margin-top: 25px;
+  box-shadow: #cff0ff 0px 10px 10px -5px;
+  border-inline: 2px solid transparent;
+}
+
+.form .input::-moz-placeholder {
+  color: rgb(170, 170, 170);
+}
+
+.form .input::placeholder {
+  color: rgb(170, 170, 170);
+}
+
+.form .input:focus {
+  outline: none;
+  border-inline: 2px solid #12b1d1;
+}
+
+.form .login-button {
+  display: block;
+  width: 100%;
+  font-weight: bold;
+  background: linear-gradient(
+    45deg,
+    rgb(16, 137, 211) 0%,
+    rgb(18, 177, 209) 100%
+  );
+  color: white;
+  padding-block: 15px;
+  margin: 20px auto;
+  border-radius: 20px;
+  box-shadow: rgba(133, 189, 215, 0.8784313725) 0px 20px 10px -15px;
+  border: none;
+  transition: all 0.2s ease-in-out;
+}
+
+.form .login-button:hover {
+  transform: scale(1.03);
+  box-shadow: rgba(133, 189, 215, 0.8784313725) 0px 23px 10px -20px;
+  cursor: pointer;
+}
+
+.form .login-button:active {
+  transform: scale(0.95);
+  box-shadow: rgba(133, 189, 215, 0.8784313725) 0px 15px 10px -10px;
+}
+
+.social-account-container {
+  margin-top: 65px;
+}
+
+.social-account-container .title {
+  display: block;
+  text-align: center;
+  font-size: 10px;
+  color: rgb(170, 170, 170);
+}
+
+.social-account-container .social-accounts {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 5px;
+}
+
+.social-account-container .social-accounts .social-button {
+  background: linear-gradient(45deg, rgb(0, 0, 0) 0%, rgb(112, 112, 112) 100%);
+  border: 5px solid white;
+  padding: 5px;
+  border-radius: 50%;
+  width: 40px;
+  aspect-ratio: 1;
+  display: grid;
+  place-content: center;
+  box-shadow: rgba(133, 189, 215, 0.8784313725) 0px 12px 10px -8px;
+  transition: all 0.2s ease-in-out;
+}
+
+.social-account-container .social-accounts .social-button .svg {
+  fill: white;
+  margin: auto;
+}
+
+.social-account-container .social-accounts .social-button:hover {
+  transform: scale(1.2);
+}
+
+.social-account-container .social-accounts .social-button:active {
+  transform: scale(0.9);
+}
+
+.agreement {
+  display: block;
+  text-align: center;
+  margin-top: 15px;
+}
+
+.agreement a {
+  text-decoration: none;
+  color: #0099ff;
+  font-size: 9px;
+}
+
+.login-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background-image: url("../../assets/images/durres_bg.jpg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: cover;
+  overflow: scroll;
+}
+
+.frosted-glass {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 72vw;
+  height: 40vh;
+  box-shadow: 0 0.3px 0.7px rgba(0, 0, 0, 0.126),
+    0 0.9px 1.7px rgba(0, 0, 0, 0.179), 0 1.8px 3.5px rgba(0, 0, 0, 0.224),
+    0 3.7px 7.3px rgba(0, 0, 0, 0.277), 0 10px 20px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(20px);
+  transition: 0.5s ease;
+  margin-top: 25px;
+}
+
+.shoes {
+  font-family: "Playwrite NL", cursive;
+  font-optical-sizing: auto;
+  font-style: normal;
+  color: darkorchid;
+  font-size: 105pt;
+  margin-right: 5px;
+  animation: flyInTop 1s ease-out forwards;
+}
+
+.durres {
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 120pt;
+  color: white;
+  margin-left: 5px;
+  animation: flyInBottom 1s ease-out forwards;
+}
+
+@keyframes flyIn {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes flyInBottom {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes flyInTop {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  .container {
+    height: 465px;
+    width: 350px;
+    animation: flyInBottom 1s ease-out forwards;
+  }
+
+  .social-account-container {
+    margin-top: 10px;
+  }
+
+  .frosted-glass {
+    width: 80vw;
+  }
+}
+
+@media screen and (max-width: 599px) {
+  .login-page {
+    background-image: url("../../assets/images/mobile_bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .container {
+    height: 465px;
+    width: 300px;
+    margin-top: -100px;
+  }
+
+  .social-account-container {
+    margin-top: 5px;
+  }
+
+  .frosted-glass {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 810px) and (min-width: 600px) {
+  .login-page {
+    background-image: url("../../assets/images/durres_bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    overflow: scroll;
+  }
+
+  .container {
+    height: 465px;
+    width: 300px;
+    animation: flyIn 1s ease-out forwards;
+  }
+
+  .social-account-container {
+    margin-top: 5px;
+  }
+
+  .frosted-glass {
+    width: 95vw;
+    height: 20vh;
+  }
+
+  .shoes {
+    font-size: 52pt;
+  }
+
+  .durres {
+    font-size: 60pt;
+  }
+}
+
+@media screen and (max-width: 1080px) and (min-width: 811px) {
+  .login-page {
+    background-image: url("../../assets/images/durres_bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    overflow: scroll;
+  }
+
+  .container {
+    height: 465px;
+    width: 350px;
+    animation: flyIn 1s ease-out forwards;
+  }
+
+  .social-account-container {
+    margin-top: 5px;
+  }
+
+  .frosted-glass {
+    width: 95vw;
+    height: 30vh;
+  }
+
+  .shoes {
+    font-size: 70pt;
+  }
+
+  .durres {
+    font-size: 85pt;
+  }
+}
+
+@media screen and (max-width: 1440px) and (min-width: 1281px) {
+  .login-page {
+    background-image: url("../../assets/images/durres_bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    overflow: scroll;
+  }
+
+  .container {
+    height: 465px;
+    width: 350px;
+    animation: flyIn 1s ease-out forwards;
+  }
+
+  .social-account-container {
+    margin-top: 5px;
+  }
+
+  .frosted-glass {
+    width: 88vw;
+    height: 30vh;
+  }
+
+  .shoes {
+    font-size: 85pt;
+  }
+
+  .durres {
+    font-size: 110pt;
+  }
+}
+
+@media screen and (max-width: 1280px) and (min-width: 1081px) {
+  .login-page {
+    background-image: url("../../assets/images/durres_bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    overflow: scroll;
+  }
+
+  .container {
+    height: 465px;
+    width: 350px;
+    animation: flyIn 1s ease-out forwards;
+  }
+
+  .social-account-container {
+    margin-top: 5px;
+  }
+
+  .frosted-glass {
+    width: 88vw;
+    height: 30vh;
+  }
+
+  .shoes {
+    font-size: 85pt;
+  }
+
+  .durres {
+    font-size: 100pt;
+  }
+}

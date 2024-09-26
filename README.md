@@ -21,3 +21,6 @@ npm start
 Open http://localhost:3000 with your browser to see the result.
 
 Keep in mind that this project was developed using node v20 so it is recommended to be using that version while trying to run the project.
+
+
+For a preview head to: https://shoe-factory-management-system.onrender.com

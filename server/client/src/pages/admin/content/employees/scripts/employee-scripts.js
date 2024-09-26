@@ -1,5 +1,5 @@
 import { logout } from "../../../../login/login-scripts";
-const url = "https://durresshoesdeployment.onrender.com/employers/";
+const url = "https://shoe-factory-management-system.onrender.com/employers/";
 
 export const getEmployees = async (notification, navigator) => {
   const response = await fetch(`${url}allWorkers`, {

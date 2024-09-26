@@ -1,7 +1,7 @@
 import { logout } from "../../../../login/login-scripts";
-const url = "https://durresshoesdeployment.onrender.com/dailyStatistics/";
-const fierUrl = "https://durresshoesdeployment.onrender.com/fierStatistics/";
-const otherCostUrl = "https://durresshoesdeployment.onrender.com/additionalCosts/";
+const url = "https://shoe-factory-management-system.onrender.com/dailyStatistics/";
+const fierUrl = "https://shoe-factory-management-system.onrender.com/fierStatistics/";
+const otherCostUrl = "https://shoe-factory-management-system.onrender.com/additionalCosts/";
 
 export const getProductsManufactured = async (notification, navigator) => {
   const now = new Date();

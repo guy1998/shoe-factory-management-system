@@ -1,6 +1,6 @@
 import { logout } from "../../../../login/login-scripts";
 
-const url = "https://durresshoesdeployment.onrender.com/additionalCosts/";
+const url = "https://shoe-factory-management-system.onrender.com/additionalCosts/";
 
 const validateExpense = (notification, expense)=>{
     if(!expense.quantity || !expense.name || !expense.date){

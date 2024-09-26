@@ -1,5 +1,5 @@
 import { logout } from "../../../../login/login-scripts";
-const url = "https://durresshoesdeployment.onrender.com/fierStatistics/";
+const url = "https://shoe-factory-management-system.onrender.com/fierStatistics/";
 
 export const getAllFierFinancials = async (notification, navigator, startDate, endDate) => {
   const response = await fetch(`${url}timeRange`, {

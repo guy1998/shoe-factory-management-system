@@ -97,13 +97,13 @@ function EmployeesEditContent() {
           color: darkMode ? "white" : "black",
         }}
       >
-        <h3>Modifico operaio</h3>
+        <h3>Modify employee</h3>
       </div>
       {employee ? (
         <div style={{ width: "90%", margin: "0 auto" }}>
           <TextField
             id="outlined-basic"
-            label="Nome"
+            label="Name"
             variant="outlined"
             fullWidth
             value={newInfo.name}
@@ -117,7 +117,7 @@ function EmployeesEditContent() {
           />
           <TextField
             id="outlined-basic"
-            label="Cognome"
+            label="Surname"
             variant="outlined"
             fullWidth
             value={newInfo.surname}
@@ -130,7 +130,7 @@ function EmployeesEditContent() {
             style={{ margin: "10px 0" }}
           />
           <TextField
-            label="Costo"
+            label="Cost"
             value={newInfo.costPerDay}
             disabled={false}
             onChange={updateCost}
@@ -178,7 +178,7 @@ function EmployeesEditContent() {
           }}
         >
           <Icon style={{ marginRight: "5px" }}>check</Icon>
-          Conferma
+          Confirm
         </MDButton>
         <MDButton
           color="primary"
@@ -187,7 +187,7 @@ function EmployeesEditContent() {
           }}
         >
           <Icon style={{ marginRight: "5px" }}>close</Icon>
-          Annulla
+          Cancel
         </MDButton>
       </div>
     </MDBox>

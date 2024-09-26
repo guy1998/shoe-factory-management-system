@@ -80,12 +80,12 @@ function EmployeesCreateContent() {
           color: darkMode ? "white" : "black",
         }}
       >
-        <h3>Creare un nuovo operaio</h3>
+        <h3>Create a new employee</h3>
       </div>
       <div style={{ width: "90%", margin: "0 auto" }}>
         <TextField
           id="outlined-basic"
-          label="Nome"
+          label="Name"
           variant="outlined"
           fullWidth
           style={{ margin: "10px 0" }}
@@ -94,7 +94,7 @@ function EmployeesCreateContent() {
         />
         <TextField
           id="outlined-basic"
-          label="Cognome"
+          label="Surname"
           variant="outlined"
           fullWidth
           style={{ margin: "10px 0" }}
@@ -102,7 +102,7 @@ function EmployeesCreateContent() {
           onChange={(event) => setSurname(event.target.value)}
         />
         <TextField
-          label="Costo"
+          label="Cost"
           value={cost}
           disabled={false}
           onChange={updateCost}
@@ -139,7 +139,7 @@ function EmployeesCreateContent() {
           }}
         >
           <Icon style={{ marginRight: "5px" }}>check</Icon>
-          Conferma
+          Confirm
         </MDButton>
         <MDButton
           color="primary"
@@ -148,7 +148,7 @@ function EmployeesCreateContent() {
           }}
         >
           <Icon style={{ marginRight: "5px" }}>close</Icon>
-          Annulla
+          Cancel
         </MDButton>
       </div>
     </MDBox>

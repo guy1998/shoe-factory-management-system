@@ -73,9 +73,9 @@ function EmployeesListContent() {
     };
   });
   const columns = [
-    { Header: "Nome", accessor: "name", align: "left" },
-    { Header: "Costo al giorno", accessor: "cost", align: "center" },
-    { Header: "Azioni", accessor: "actions", align: "center" },
+    { Header: "Name", accessor: "name", align: "left" },
+    { Header: "Daily cost", accessor: "cost", align: "center" },
+    { Header: "Actions", accessor: "actions", align: "center" },
   ];
 
   useEffect(() => {
@@ -103,7 +103,7 @@ function EmployeesListContent() {
         justifyContent="space-between"
       >
         <MDTypography variant="h6" color="white">
-          Operai
+          Employees
         </MDTypography>
         <div
           style={{
@@ -129,7 +129,7 @@ function EmployeesListContent() {
             }}
           >
             <Icon style={{ marginRight: "5px" }}>person_add</Icon>
-            {"Crea nuovo"}
+            {"Create new"}
           </MDButton>
         </div>
       </MDBox>

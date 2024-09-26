@@ -17,7 +17,7 @@ export const getUsers = async (notification, navigator) => {
     logout(notification, navigator);
   } else {
     notification.add(
-      "Il server non è stato in grado di gestire la richiesta!",
+      "The server was unable to handle the request!",
       { variant: "error" }
     );
   }
@@ -26,7 +26,7 @@ export const getUsers = async (notification, navigator) => {
 
 const validateUser = (notification, user) => {
   if (!user.username || !user.password || !user.name || !user.surname) {
-    notification.add("Ci sono alcune informazioni mancanti!", {
+    notification.add("There are missing information", {
       variant: "error",
     });
     return false;
@@ -45,7 +45,7 @@ export const addUser = async (notification, navigator, user) => {
       credentials: "include",
     });
     if (response.status === 201) {
-      notification.add("L'utente è stato creato con successo!", {
+      notification.add("The user has been successfully created!", {
         variant: "success",
       });
       navigator("/app/user");
@@ -56,7 +56,7 @@ export const addUser = async (notification, navigator, user) => {
       notification.add(message.message, { variant: "error" });
     } else {
       notification.add(
-        "Il server non è stato in grado di gestire la richiesta!",
+        "The server was unable to handle the request!",
         {
           variant: "error",
         }
@@ -81,7 +81,7 @@ export const changeUserStatus = async (
     credentials: "include",
   });
   if (response.status === 200) {
-    notification.add("L'utente è stato modificato con successo!", {
+    notification.add("The user has been successfully modified!", {
       variant: "success",
     });
     dependency(true);
@@ -89,7 +89,7 @@ export const changeUserStatus = async (
     logout(notification, navigator);
   } else {
     notification.add(
-      "Il server non è stato in grado di gestire la richiesta!",
+      "The server was unable to handle the request!",
       {
         variant: "error",
       }
@@ -114,13 +114,13 @@ export const checkUserSectionAccess = async (
   } else if (response.status === 401) {
     logout(notification, navigator);
   } else if (response.status === 403) {
-    notification.add("Non hai accesso a questa sezione dell'applicazione!", {
+    notification.add("You don't have access to this section of the app!", {
       variant: "info",
     });
     navigator("/app/dashboard");
   } else {
     notification.add(
-      "Il server non è stato in grado di gestire la richiesta!",
+      "The server was unable to handle the request!",
       {
         variant: "error",
       }

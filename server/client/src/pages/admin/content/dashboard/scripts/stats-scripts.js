@@ -1,7 +1,10 @@
 import { logout } from "../../../../login/login-scripts";
-const url = "https://shoe-factory-management-system.onrender.com/dailyStatistics/";
-const fierUrl = "https://shoe-factory-management-system.onrender.com/fierStatistics/";
-const otherCostUrl = "https://shoe-factory-management-system.onrender.com/additionalCosts/";
+const url =
+  "https://shoe-factory-management-system.onrender.com/dailyStatistics/";
+const fierUrl =
+  "https://shoe-factory-management-system.onrender.com/fierStatistics/";
+const otherCostUrl =
+  "https://shoe-factory-management-system.onrender.com/additionalCosts/";
 
 export const getProductsManufactured = async (notification, navigator) => {
   const now = new Date();
@@ -25,12 +28,9 @@ export const getProductsManufactured = async (notification, navigator) => {
   } else if (response.status === 401) {
     logout(notification, navigator);
   } else {
-    notification.add(
-      "Il server non è stato in grado di gestire la richiesta!",
-      {
-        variant: "error",
-      }
-    );
+    notification.add("The server was unable to handle the request!", {
+      variant: "error",
+    });
   }
   const productsManufactured = data.reduce((acc, stat) => {
     return acc + stat.products.length;
@@ -67,12 +67,9 @@ export const getWeeklyStats = async (notification, navigator) => {
   } else if (response.status === 401) {
     logout(notification, navigator);
   } else {
-    notification.add(
-      "Il server non è stato in grado di gestire la richiesta!",
-      {
-        variant: "error",
-      }
-    );
+    notification.add("The server was unable to handle the request!", {
+      variant: "error",
+    });
   }
   return data;
 };
@@ -99,12 +96,9 @@ export const getMonthlyProfit = async (notification, navigator) => {
   } else if (response.status === 401) {
     logout(notification, navigator);
   } else {
-    notification.add(
-      "Il server non è stato in grado di gestire la richiesta!",
-      {
-        variant: "error",
-      }
-    );
+    notification.add("The server was unable to handle the request!", {
+      variant: "error",
+    });
   }
   const profit = data.reduce((acc, stat) => {
     return parseFloat(acc) + parseFloat(stat.profit.$numberDecimal);
@@ -134,18 +128,15 @@ export const getFierMonthlyProfit = async (notification, navigator) => {
   } else if (response.status === 401) {
     logout(notification, navigator);
   } else {
-    notification.add(
-      "Il server non è stato in grado di gestire la richiesta!",
-      {
-        variant: "error",
-      }
-    );
+    notification.add("The server was unable to handle the request!", {
+      variant: "error",
+    });
   }
   const profit = data.reduce((acc, stat) => {
     return parseFloat(acc) + parseFloat(stat.profit.$numberDecimal);
   }, 0);
   return profit;
-}
+};
 
 export const getMonthlyCost = async (notification, navigator) => {
   const now = new Date();
@@ -169,12 +160,9 @@ export const getMonthlyCost = async (notification, navigator) => {
   } else if (response.status === 401) {
     logout(notification, navigator);
   } else {
-    notification.add(
-      "Il server non è stato in grado di gestire la richiesta!",
-      {
-        variant: "error",
-      }
-    );
+    notification.add("The server was unable to handle the request!", {
+      variant: "error",
+    });
   }
   const cost = data.reduce((acc, stat) => {
     return parseFloat(acc) + parseFloat(stat.productionCost.$numberDecimal);
@@ -194,12 +182,9 @@ export const getMonthlyCost = async (notification, navigator) => {
   } else if (response.status === 401) {
     logout(notification, navigator);
   } else {
-    notification.add(
-      "Il server non è stato in grado di gestire la richiesta!",
-      {
-        variant: "error",
-      }
-    );
+    notification.add("IThe server was unable to handle the request!", {
+      variant: "error",
+    });
   }
   const cost2 = data2.reduce((acc, stat) => {
     return parseFloat(acc) + parseFloat(stat.quantity.$numberDecimal);

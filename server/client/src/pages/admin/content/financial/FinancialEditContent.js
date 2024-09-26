@@ -124,10 +124,10 @@ function FinancialEditContent() {
     };
   });
   const columns = [
-    { Header: "Codice", accessor: "code", align: "left" },
-    { Header: "Costo", accessor: "cost", align: "center" },
-    { Header: "Quantità", accessor: "quantity", align: "center" },
-    { Header: "Subtotale", accessor: "subtotal", align: "center" },
+    { Header: "Code", accessor: "code", align: "left" },
+    { Header: "Cost", accessor: "cost", align: "center" },
+    { Header: "Quantity", accessor: "quantity", align: "center" },
+    { Header: "Subtotal", accessor: "subtotal", align: "center" },
     { Header: "", accessor: "remove", align: "center" },
   ];
   const onSelectProduct = (event) => {
@@ -189,7 +189,7 @@ function FinancialEditContent() {
           alignItems="flex-start"
         >
           <MDTypography variant="h6" color="white">
-            Seleziona i prodotti
+            Select the products
           </MDTypography>
           <FormControl
             style={{ width: isMobile ? "100%" : "400px", height: "50px" }}
@@ -198,7 +198,7 @@ function FinancialEditContent() {
               id="demo-simple-select-label"
               style={{ color: "white" }}
             >
-              Prodotti
+              Products
             </InputLabel>
             <Select
               labelId="demo-simple-select-label"
@@ -238,7 +238,7 @@ function FinancialEditContent() {
                 justifyContent: "center",
               }}
             >
-              Nessun prodotto ancora selezionato
+              No product selected
             </div>
           )}
         </MDBox>
@@ -261,13 +261,13 @@ function FinancialEditContent() {
           <>
             <MDBox>
               <MDTypography color="black">
-                Totale guadagnato: {calculateEarned(selectedProducts)}
+                Total earned: {calculateEarned(selectedProducts)}
               </MDTypography>
               <MDTypography color="black">
-                Spesa totale: {productionCost}
+                Total expenses: {productionCost}
               </MDTypography>
               <MDTypography color="black">
-                Profitto totale:{" "}
+                Total profit:{" "}
                 {calculateEarned(selectedProducts) - productionCost}
               </MDTypography>
             </MDBox>
@@ -284,7 +284,7 @@ function FinancialEditContent() {
               }}
             >
               <Icon style={{ marginRight: "5px" }}>check</Icon>
-              Conferma
+              Conferm
             </MDButton>
           </>
         ) : (

@@ -38,7 +38,7 @@ function TotalMoney({ value }) {
       </div>
 
       <div className="balancewrapper">
-        <span className="balanceHeading">Profito totale</span>
+        <span className="balanceHeading">Total profit</span>
         <p className="balance">
           <span id="currency">Leke </span>{value}
         </p>

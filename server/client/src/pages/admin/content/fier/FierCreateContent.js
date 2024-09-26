@@ -183,13 +183,13 @@ function FierCreateContent() {
     };
   });
   const columns = [
-    { Header: "Codice", accessor: "code", align: "left" },
-    { Header: "Prezo", accessor: "price", align: "center" },
-    { Header: "Quantità", accessor: "quantity", align: "center" },
-    { Header: "Costo", accessor: "cost", align: "center" },
-    { Header: 'Subtotale Guadagnato', accessor: 'subtotal_earn', align: 'center'},
-    { Header: 'Subtotale Costo', accessor: 'subtotal_cost', align: 'center'},
-    { Header: "Subtotale", accessor: "subtotal", align: "center" },
+    { Header: "Code", accessor: "code", align: "left" },
+    { Header: "Price", accessor: "price", align: "center" },
+    { Header: "Quantity", accessor: "quantity", align: "center" },
+    { Header: "Cost", accessor: "cost", align: "center" },
+    { Header: 'Subtotal Earned', accessor: 'subtotal_earn', align: 'center'},
+    { Header: 'Subtotal Cost', accessor: 'subtotal_cost', align: 'center'},
+    { Header: "Subtotal", accessor: "subtotal", align: "center" },
     { Header: "", accessor: "remove", align: "center" },
   ];
   const onSelectProduct = (event) => {
@@ -204,7 +204,7 @@ function FierCreateContent() {
         (product) => product.code === selected.code
       );
       if (exists.length)
-        notification.add("Questo prodotto è già selezionato!", {
+        notification.add("The product was already selected", {
           variant: "info",
         });
       else {
@@ -240,7 +240,7 @@ function FierCreateContent() {
           alignItems="flex-start"
         >
           <MDTypography variant="h6" color="white">
-            Seleziona i prodotti
+            Select the products
           </MDTypography>
           <FormControl
             style={{ width: isMobile ? "100%" : "400px", height: "50px" }}
@@ -249,7 +249,7 @@ function FierCreateContent() {
               id="demo-simple-select-label"
               style={{ color: "white" }}
             >
-              Prodotti
+              Products
             </InputLabel>
             <Select
               labelId="demo-simple-select-label"
@@ -289,7 +289,7 @@ function FierCreateContent() {
                 justifyContent: "center",
               }}
             >
-              Nessun prodotto ancora selezionato
+              No product selected
             </div>
           )}
         </MDBox>
@@ -310,13 +310,13 @@ function FierCreateContent() {
       >
         <MDBox>
           <MDTypography color="black">
-            Totale guadagnato: {calculateEarned(selectedProducts)}
+            Total earned: {calculateEarned(selectedProducts)}
           </MDTypography>
           <MDTypography color="black">
-            Spesa totale: {calculateTotalExpenses(selectedProducts)}
+            Total expenses: {calculateTotalExpenses(selectedProducts)}
           </MDTypography>
           <MDTypography color="black">
-            Profitto totale:{" "}
+            Total profit:{" "}
             {calculateEarned(selectedProducts) - calculateTotalExpenses(selectedProducts)}
           </MDTypography>
         </MDBox>
@@ -326,14 +326,14 @@ function FierCreateContent() {
             if (selectedProducts.length) {
               createFierStatistic(notification, navigate, selectedProducts);
             } else {
-              notification.add("Seleziona gli articoli per procedere!", {
+              notification.add("Select product to continue", {
                 variant: "info",
               });
             }
           }}
         >
           <Icon style={{ marginRight: "5px" }}>check</Icon>
-          Conferma
+          Conferm
         </MDButton>
       </MDBox>
     </MDBox>

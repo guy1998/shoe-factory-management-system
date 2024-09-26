@@ -80,7 +80,7 @@ function ProductCreateContent() {
           color: darkMode ? "white" : "black",
         }}
       >
-        <h3>Crea un nuovo prodotto</h3>
+        <h3>Create a new product</h3>
       </div>
       <div style={{ width: "90%", margin: "0 auto" }}>
         <TextField
@@ -129,7 +129,7 @@ function ProductCreateContent() {
           }}
         >
           <Icon style={{ marginRight: "5px" }}>check</Icon>
-          Conferma
+          Conferm
         </MDButton>
         <MDButton
           color="primary"

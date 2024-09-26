@@ -1,14 +1,28 @@
 import { logout } from "../../../../login/login-scripts";
-const url = "https://shoe-factory-management-system.onrender.com/dailyStatistics/";
-const expensesUrl = "https://shoe-factory-management-system.onrender.com/additionalCosts/";
+const url =
+  "https://shoe-factory-management-system.onrender.com/dailyStatistics/";
+const expensesUrl =
+  "https://shoe-factory-management-system.onrender.com/additionalCosts/";
 
-export const getAllFinancials = async (notification, navigator, startDate, endDate) => {
+export const getAllFinancials = async (
+  notification,
+  navigator,
+  startDate,
+  endDate
+) => {
   const response = await fetch(`${url}timeRange`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify({ startDate: new Date(Date.UTC(startDate.year(), startDate.month(),startDate.date(),  0, 0, 0)), endDate: new Date(Date.UTC(endDate.year(), endDate.month(), endDate.date(), 23, 59, 59)) }),
+    body: JSON.stringify({
+      startDate: new Date(
+        Date.UTC(startDate.year(), startDate.month(), startDate.date(), 0, 0, 0)
+      ),
+      endDate: new Date(
+        Date.UTC(endDate.year(), endDate.month(), endDate.date(), 23, 59, 59)
+      ),
+    }),
     credentials: "include",
   });
   let data = [];
@@ -17,39 +31,48 @@ export const getAllFinancials = async (notification, navigator, startDate, endDa
   } else if (response.status === 401) {
     logout(notification, navigator);
   } else {
-    notification.add(
-      "Il server non è stato in grado di gestire la richiesta!",
-      {
-        variant: "error",
-      }
-    );
+    notification.add("The server was unable to handle the request!", {
+      variant: "error",
+    });
   }
   return data;
 };
 
-export const getAllExpenses = async (notification, navigator, startDate, endDate)=>{
+export const getAllExpenses = async (
+  notification,
+  navigator,
+  startDate,
+  endDate
+) => {
   const response = await fetch(`${expensesUrl}costByTimeRange`, {
-      method: 'POST',
-      headers: {
-          "Content-Type": 'application/json'
-      },
-      body: JSON.stringify({ startDate: new Date(Date.UTC(startDate.year(), startDate.month(),startDate.date(),  0, 0, 0)), endDate: new Date(Date.UTC(endDate.year(), endDate.month(), endDate.date(), 23, 59, 59)) }),
-      credentials: 'include'
-  })
-  let data = []
-  if(response.status === 200){
-      data = await response.json();
-  } else if(response.status === 401){
-      notification.add('Session is expired!', { variant: 'info' });
-      logout(notification, navigator);
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      startDate: new Date(
+        Date.UTC(startDate.year(), startDate.month(), startDate.date(), 0, 0, 0)
+      ),
+      endDate: new Date(
+        Date.UTC(endDate.year(), endDate.month(), endDate.date(), 23, 59, 59)
+      ),
+    }),
+    credentials: "include",
+  });
+  let data = [];
+  if (response.status === 200) {
+    data = await response.json();
+  } else if (response.status === 401) {
+    notification.add("Session is expired!", { variant: "info" });
+    logout(notification, navigator);
   } else {
-      notification.add('La richiesta e\' stata respinta!', { variant: 'error' });
+    notification.add("The request was rejected!", { variant: "error" });
   }
-  const expense = data.reduce((acc, expense)=>{
+  const expense = data.reduce((acc, expense) => {
     return parseFloat(acc) + parseFloat(expense.quantity.$numberDecimal);
   }, 0);
-  return expense
-}
+  return expense;
+};
 
 export const createStatistic = async (notification, navigator, products) => {
   const response = await fetch(`${url}create`, {
@@ -61,19 +84,16 @@ export const createStatistic = async (notification, navigator, products) => {
     credentials: "include",
   });
   if (response.status === 201) {
-    notification.add("La statistica è stata aggiunta con successo!", {
+    notification.add("The statistic was created successfully", {
       variant: "success",
     });
     navigator("/app/financial");
   } else if (response.status === 401) {
     logout(notification, navigator);
   } else {
-    notification.add(
-      "Il server non è stato in grado di gestire la richiesta!",
-      {
-        variant: "error",
-      }
-    );
+    notification.add("The server was unable to handle the request!", {
+      variant: "error",
+    });
   }
 };
 
@@ -92,19 +112,16 @@ export const editStatistic = async (
     credentials: "include",
   });
   if (response.status === 200) {
-    notification.add("La statistica è stata aggiunta con successo!", {
+    notification.add("The statistic was updated successfully", {
       variant: "success",
     });
     navigator("/app/financial");
   } else if (response.status === 401) {
     logout(notification, navigator);
   } else {
-    notification.add(
-      "Il server non è stato in grado di gestire la richiesta!",
-      {
-        variant: "error",
-      }
-    );
+    notification.add("The server was unable to handle the request!", {
+      variant: "error",
+    });
   }
 };
 
@@ -122,7 +139,7 @@ export const getStatisticById = async (notification, navigator, statId) => {
   } else if (response.status === 401) {
     logout(notification, navigator);
   } else {
-    notification.add("La statistica non esiste!", {
+    notification.add("The statistic does not exist", {
       variant: "error",
     });
     navigator("/app/financial");
@@ -144,12 +161,9 @@ export const getProductionCost = async (notification, navigator) => {
   } else if (response.status === 401) {
     logout(notification, navigator);
   } else {
-    notification.add(
-      "Il server non è stato in grado di gestire la richiesta!",
-      {
-        variant: "error",
-      }
-    );
+    notification.add("The server was unable to handle the request!", {
+      variant: "error",
+    });
   }
   return data;
 };
@@ -168,13 +182,13 @@ export const deleteStat = async (
     credentials: "include",
   });
   if (response.status === 200) {
-    notification.add("Eliminato con successo!", { variant: "success" });
+    notification.add("Deleted successfully", { variant: "success" });
     dependency(true);
     navigator("/app/financial");
   } else if (response.status === 401) {
     logout(notification, navigator);
   } else {
-    notification.add("La statistica non esiste!", {
+    notification.add("The statistic does not exist!", {
       variant: "error",
     });
     navigator("/app/financial");

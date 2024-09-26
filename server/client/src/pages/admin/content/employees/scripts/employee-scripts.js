@@ -15,10 +15,9 @@ export const getEmployees = async (notification, navigator) => {
   } else if (response.status === 401) {
     logout(notification, navigator);
   } else {
-    notification.add(
-      "Il server non è stato in grado di gestire la richiesta!",
-      { variant: "error" }
-    );
+    notification.add("The server was unable to handle the request!", {
+      variant: "error",
+    });
   }
   return data;
 };
@@ -26,7 +25,7 @@ export const getEmployees = async (notification, navigator) => {
 const validateEmployee = (notification, employeeInfo) => {
   if (!employeeInfo.name || !employeeInfo.surname || !employeeInfo.costPerDay) {
     notification.add(
-      "Ci sono alcune informazioni mancanti! Compila tutti i campi prima di inviare per favore!",
+      "There are information missiong! Please fill in all the fields before submitting!",
       { variant: "error" }
     );
     return false;
@@ -45,19 +44,16 @@ export const addEmployee = async (notification, navigator, employeeInfo) => {
       credentials: "include",
     });
     if (response.status === 201) {
-      notification.add("Il operaio è stato aggiunto correttamente!", {
+      notification.add("The worker has been added correctly!", {
         variant: "success",
       });
       navigator("/app/employees/");
     } else if (response.status === 401) {
       logout(notification, navigator);
     } else {
-      notification.add(
-        "Il server non è stato in grado di gestire la richiesta!",
-        {
-          variant: "error",
-        }
-      );
+      notification.add("The server was unable to handle the request!", {
+        variant: "error",
+      });
     }
   }
 };
@@ -76,7 +72,7 @@ export const getEmployeeInfo = async (notification, navigator, employeeId) => {
   } else if (response.status === 401) {
     logout(notification, navigator);
   } else {
-    notification.add("Il operaio non esiste!", { variant: "error" });
+    notification.add("The emplyee does not exist", { variant: "error" });
     navigator("/app/employees/");
   }
   return data;
@@ -98,19 +94,16 @@ export const editEmployee = async (
       credentials: "include",
     });
     if (response.status === 200) {
-      notification.add("Il operaio è stato aggiornato con successo!", {
+      notification.add("The employee has been updated successfully", {
         variant: "success",
       });
       navigator("/app/employees/");
     } else if (response.status === 401) {
       logout(notification, navigator);
     } else {
-      notification.add(
-        "Il server non è stato in grado di gestire la richiesta!",
-        {
-          variant: "error",
-        }
-      );
+      notification.add("The server was unable to handle the request!", {
+        variant: "error",
+      });
     }
   }
 };
@@ -130,17 +123,14 @@ export const deleteEmployee = async (
   });
   if (response.status === 200) {
     dependency(true);
-    notification.add("Il operaio è stato eliminato con successo!!", {
+    notification.add("The employee has been deleted successfully", {
       variant: "success",
     });
   } else if (response.status === 401) {
     logout(notification, navigator);
   } else {
-    notification.add(
-      "Il server non è stato in grado di gestire la richiesta!",
-      {
-        variant: "error",
-      }
-    );
+    notification.add("The server was unable to handle the request!", {
+      variant: "error",
+    });
   }
 };

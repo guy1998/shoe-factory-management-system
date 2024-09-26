@@ -91,10 +91,10 @@ function FinancialListContent() {
     };
   });
   const columns = [
-    { Header: "Data della relazione", accessor: "date", align: "left" },
-    { Header: "Profitto", accessor: "profit", align: "center" },
-    { Header: "Costo di produzione", accessor: "cost", align: "center" },
-    { Header: "Azioni", accessor: "actions", align: "center" },
+    { Header: "Date of the report", accessor: "date", align: "left" },
+    { Header: "Profit", accessor: "profit", align: "center" },
+    { Header: "Cost of production", accessor: "cost", align: "center" },
+    { Header: "Actions", accessor: "actions", align: "center" },
   ];
 
   useEffect(() => {
@@ -126,7 +126,7 @@ function FinancialListContent() {
         justifyContent="space-between"
       >
         <MDTypography variant="h6" color="white">
-          Relazioni finanziarie
+        Financial Reports
         </MDTypography>
         <div
           style={{
@@ -140,7 +140,7 @@ function FinancialListContent() {
           <MDButton
             onClick={() => {
               if (checkIfToday(stats)) {
-                notification.add("Oggi è già stato pubblicato un rapporto!", {
+                notification.add("A report has already been published today!", {
                   variant: "info",
                 });
               } else {
@@ -149,7 +149,7 @@ function FinancialListContent() {
             }}
           >
             <Icon style={{ marginRight: "5px" }}>analytics</Icon>
-            {isMobile ? "" : "Crea nuovo"}
+            {isMobile ? "" : "Create new"}
           </MDButton>
           <FilterModal
             startDate={startDate}

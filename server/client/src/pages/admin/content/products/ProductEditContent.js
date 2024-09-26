@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 import { Icon } from "@mui/material";
 import TextField from "@mui/material/TextField";
 import MDBox from "../../../../components/MDBox";
@@ -39,7 +39,6 @@ NumericFormatCustom.propTypes = {
   name: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
 };
-
 
 function ProductEditContent() {
   const [controller] = useMaterialUIController();
@@ -93,7 +92,7 @@ function ProductEditContent() {
           color: darkMode ? "white" : "black",
         }}
       >
-        <h3>Modifica prodotto</h3>
+        <h3>Edit product</h3>
       </div>
       {product ? (
         <div style={{ width: "90%", margin: "0 auto" }}>
@@ -107,19 +106,19 @@ function ProductEditContent() {
             onChange={(event) => setCode(event.target.value)}
           />
           <TextField
-          label="Costo"
-          value={cost}
-          disabled={false}
-          onChange={updateCost}
-          name="numberformat"
-          InputProps={{
-            inputComponent: NumericFormatCustom,
-          }}
-          variant="outlined"
-          min='0'
-          sx={{ minWidth: "100px" }}
-          fullWidth
-        />
+            label="Costo"
+            value={cost}
+            disabled={false}
+            onChange={updateCost}
+            name="numberformat"
+            InputProps={{
+              inputComponent: NumericFormatCustom,
+            }}
+            variant="outlined"
+            min="0"
+            sx={{ minWidth: "100px" }}
+            fullWidth
+          />
         </div>
       ) : (
         <div
@@ -158,7 +157,7 @@ function ProductEditContent() {
           }}
         >
           <Icon style={{ marginRight: "5px" }}>check</Icon>
-          Conferma
+          Conferm
         </MDButton>
         <MDButton
           color="primary"
@@ -167,7 +166,7 @@ function ProductEditContent() {
           }}
         >
           <Icon style={{ marginRight: "5px" }}>close</Icon>
-          Annulla
+          Cancel
         </MDButton>
       </div>
     </MDBox>

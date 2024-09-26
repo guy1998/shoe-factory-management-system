@@ -44,16 +44,14 @@ function ViewProductsModal({ products }) {
       price: (
         <MDTypography>{`${product.price.$numberDecimal} Lek`}</MDTypography>
       ),
-      cost: (
-        <MDTypography>{`${product.cost.$numberDecimal} Lek`}</MDTypography>
-      ),
+      cost: <MDTypography>{`${product.cost.$numberDecimal} Lek`}</MDTypography>,
     };
   });
   const columns = [
-    { Header: "Codice", accessor: "code", align: "left" },
-    { Header: "Quantità", accessor: "quantity", align: "center" },
-    { Header: "Prezzo dell'articolo", accessor: "price", align: "center" },
-    { Header: "Costo dell'articolo", accessor: 'cost', align: 'center'}
+    { Header: "Code", accessor: "code", align: "left" },
+    { Header: "Quantity", accessor: "quantity", align: "center" },
+    { Header: "Article's price", accessor: "price", align: "center" },
+    { Header: "Article's cost", accessor: "cost", align: "center" },
   ];
 
   return (
@@ -64,7 +62,7 @@ function ViewProductsModal({ products }) {
         onClick={handleOpen}
       >
         <Icon style={{ marginRight: "5px" }}>manage_search</Icon>
-        Visualizza i articoli{" "}
+        View articles{" "}
       </MDButton>
       <Modal
         open={open}
@@ -87,7 +85,7 @@ function ViewProductsModal({ products }) {
               justifyContent="space-between"
             >
               <MDTypography variant="h6" color="white">
-                Articoli
+                Articles
               </MDTypography>
             </MDBox>
             <MDBox pt={3}>

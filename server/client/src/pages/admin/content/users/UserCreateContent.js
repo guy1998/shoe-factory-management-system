@@ -42,12 +42,12 @@ function UserCreateContent() {
           color: darkMode ? "white" : "black",
         }}
       >
-        <h3>Creare un nuovo utente</h3>
+        <h3>Create new user</h3>
       </div>
       <div style={{ width: "90%", margin: "0 auto" }}>
         <TextField
           id="outlined-basic"
-          label="Nome"
+          label="Name"
           variant="outlined"
           fullWidth
           style={{ margin: "10px 0" }}
@@ -56,7 +56,7 @@ function UserCreateContent() {
         />
         <TextField
           id="outlined-basic"
-          label="Cognome"
+          label="Surname"
           variant="outlined"
           fullWidth
           style={{ margin: "10px 0" }}
@@ -106,7 +106,7 @@ function UserCreateContent() {
           }}
         >
           <Icon style={{ marginRight: "5px" }}>check</Icon>
-          Conferma
+          Conferm
         </MDButton>
         <MDButton
           color="primary"
@@ -115,7 +115,7 @@ function UserCreateContent() {
           }}
         >
           <Icon style={{ marginRight: "5px" }}>close</Icon>
-          Anulla
+          Cancel
         </MDButton>
       </div>
     </MDBox>

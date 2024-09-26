@@ -18,7 +18,7 @@ const routes = [
   },
   {
     type: "collapse",
-    name: "Operai",
+    name: "Employees",
     key: "employees",
     icon: <Icon fontSize="small">worker</Icon>,
     route: "/employees*",
@@ -26,7 +26,7 @@ const routes = [
   },
   {
     type: "collapse",
-    name: "Articoli",
+    name: "Products",
     key: "products",
     icon: <Icon fontSize="small">inventory_2</Icon>,
     route: "/products*",
@@ -34,7 +34,7 @@ const routes = [
   },
   {
     type: "collapse",
-    name: "Relazioni finanziarie",
+    name: "Financial stats",
     key: "financial",
     icon: <Icon fontSize="small">analytics</Icon>,
     route: "/financial*",
@@ -42,7 +42,7 @@ const routes = [
   },
   {
     type: "collapse",
-    name: "Fier",
+    name: "Financial stats 'Fier'",
     key: "fier",
     icon: <Icon fontSize="small">analytics</Icon>,
     route: "/fier*",
@@ -50,7 +50,7 @@ const routes = [
   },
   {
     type: "collapse",
-    name: "Spese",
+    name: "Expenses",
     key: "spese",
     icon: <Icon fontSize="small">credit_card_off</Icon>,
     route: "/spese*",
@@ -58,7 +58,7 @@ const routes = [
   },
   {
     type: "collapse",
-    name: "Gestione degli utenti",
+    name: "Manage users",
     key: "user",
     icon: <Icon fontSize="small">person</Icon>,
     route: "/user*",

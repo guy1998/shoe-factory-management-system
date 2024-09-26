@@ -19,7 +19,7 @@ function DashboardContent() {
             <StastisticsCard
               color="success"
               icon="attach_money"
-              title="Profitto mensile"
+              title="Monthly profit"
               request={getMonthlyProfit}
             />
           </Grid>
@@ -27,7 +27,7 @@ function DashboardContent() {
             <StastisticsCard
               color="info"
               icon="inventory"
-              title="Profitto mensile Fier"
+              title="Monthly profit 'Fier'"
               request={getFierMonthlyProfit}
             />
           </Grid>
@@ -35,7 +35,7 @@ function DashboardContent() {
             <StastisticsCard
               color="primary"
               icon="money_off"
-              title="Costo mensile"
+              title="Monthly cost"
               request={getMonthlyCost}
             />
           </Grid>

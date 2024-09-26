@@ -32,7 +32,7 @@ function ChangePasswordModal() {
         <Icon color="secondary" fontSize="large" style={{ marginRight: "5px" }}>
           password
         </Icon>
-        Modificare la password
+        Modify the password
       </TriggerButton>
       <Modal
         open={open}

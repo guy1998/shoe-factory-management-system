@@ -55,17 +55,17 @@ function BarChart() {
           {!isMobile ? (
             <ReportsBarChart
               color="info"
-              title="Statistiche sui profitti"
-              description="L'andamento di questa settimana (guadagno meno il costo del lavoro)"
-              date="aggiornato quotidianamente"
+              title="Statistics on profit"
+              description="The progress of this week (the total minus labor cost)"
+              date="updated daily"
               chart={reportsBarChartData}
             />
           ) : (
             <HorizontalBarChart
               color="info"
               title="Profit statistics"
-              description="L'andamento di questa settimana (guadagno meno il costo del lavoro)"
-              date="aggiornato quotidianamente"
+              description="The progress of this week (the total minus labor cost)"
+              date="updated daily"
               chart={reportsBarChartData}
             />
           )}

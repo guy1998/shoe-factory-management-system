@@ -174,9 +174,9 @@ function Configurator() {
         px={3}
       >
         <MDBox>
-          <MDTypography variant="h5">Impostazioni</MDTypography>
+          <MDTypography variant="h5">Settings</MDTypography>
           <MDTypography variant="body2" color="text">
-            Gestisci il tuo profilo
+            Manage your profile
           </MDTypography>
         </MDBox>
 
@@ -201,9 +201,9 @@ function Configurator() {
         <MDBox></MDBox>
 
         <MDBox mt={3} lineHeight={1}>
-          <MDTypography variant="h6">Informazione generale</MDTypography>
+          <MDTypography variant="h6">General information</MDTypography>
           <MDTypography variant="button" color="text">
-            Modificare le informazioni
+            Modify the information
           </MDTypography>
 
           <MDBox
@@ -216,7 +216,7 @@ function Configurator() {
           >
             <TextField
               variant="outlined"
-              label="Nome"
+              label="Name"
               value={edited?.name}
               onChange={(event) =>
                 setEdited({ ...edited, name: event.target.value })
@@ -225,7 +225,7 @@ function Configurator() {
             />
             <TextField
               variant="outlined"
-              label="Cognome"
+              label="Surname"
               value={edited?.surname}
               onChange={(event) =>
                 setEdited({ ...edited, surname: event.target.value })
@@ -254,15 +254,15 @@ function Configurator() {
               }}
             >
               <Icon sx={{ marginRight: "5px" }}>check</Icon>
-              Conferma
+              Confirm
             </MDButton>
           </MDBox>
         </MDBox>
         <Divider />
         <MDBox mt={3} lineHeight={1}>
-          <MDTypography variant="h6">Credenziali</MDTypography>
+          <MDTypography variant="h6">Credentials</MDTypography>
           <MDTypography variant="button" color="text">
-            Modificare la password
+            Modify the password
           </MDTypography>
           <MDBox
             sx={{

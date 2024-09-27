@@ -15,6 +15,7 @@ function LoginForm() {
   return (
     <div className="container">
       <div className="heading">Sign In</div>
+      <h5>For this demo username: guy1989 password: 123456</h5>
       <form className="form" action="">
         <input
           placeholder="Username"
@@ -76,7 +77,7 @@ function LoginForm() {
         </div>
       </div>
       <span className="agreement">
-        <a href="#">APPA softwares product</a>
+        <a href="#">Forgot password?</a>
       </span>
     </div>
   );

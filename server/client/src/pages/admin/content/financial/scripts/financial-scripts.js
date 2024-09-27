@@ -18,7 +18,7 @@ export const getAllFinancials = async (notification, navigator, startDate, endDa
     logout(notification, navigator);
   } else {
     notification.add(
-      "Il server non è stato in grado di gestire la richiesta!",
+      "The server could not handle the request!",
       {
         variant: "error",
       }
@@ -43,7 +43,7 @@ export const getAllExpenses = async (notification, navigator, startDate, endDate
       notification.add('Session is expired!', { variant: 'info' });
       logout(notification, navigator);
   } else {
-      notification.add('La richiesta e\' stata respinta!', { variant: 'error' });
+      notification.add('The server could not handle the request!', { variant: 'error' });
   }
   const expense = data.reduce((acc, expense)=>{
     return parseFloat(acc) + parseFloat(expense.quantity.$numberDecimal);
@@ -61,7 +61,7 @@ export const createStatistic = async (notification, navigator, products) => {
     credentials: "include",
   });
   if (response.status === 201) {
-    notification.add("La statistica è stata aggiunta con successo!", {
+    notification.add("The stat was added with success!", {
       variant: "success",
     });
     navigator("/app/financial");
@@ -69,7 +69,7 @@ export const createStatistic = async (notification, navigator, products) => {
     logout(notification, navigator);
   } else {
     notification.add(
-      "Il server non è stato in grado di gestire la richiesta!",
+      "The server could not handle the request!",
       {
         variant: "error",
       }
@@ -92,7 +92,7 @@ export const editStatistic = async (
     credentials: "include",
   });
   if (response.status === 200) {
-    notification.add("La statistica è stata aggiunta con successo!", {
+    notification.add("The stat was edited with success!", {
       variant: "success",
     });
     navigator("/app/financial");
@@ -100,7 +100,7 @@ export const editStatistic = async (
     logout(notification, navigator);
   } else {
     notification.add(
-      "Il server non è stato in grado di gestire la richiesta!",
+      "The server could not handle the request!",
       {
         variant: "error",
       }
@@ -122,7 +122,7 @@ export const getStatisticById = async (notification, navigator, statId) => {
   } else if (response.status === 401) {
     logout(notification, navigator);
   } else {
-    notification.add("La statistica non esiste!", {
+    notification.add("The stat does not exist!", {
       variant: "error",
     });
     navigator("/app/financial");
@@ -145,7 +145,7 @@ export const getProductionCost = async (notification, navigator) => {
     logout(notification, navigator);
   } else {
     notification.add(
-      "Il server non è stato in grado di gestire la richiesta!",
+      "The server could not handle the request!",
       {
         variant: "error",
       }
@@ -168,13 +168,13 @@ export const deleteStat = async (
     credentials: "include",
   });
   if (response.status === 200) {
-    notification.add("Eliminato con successo!", { variant: "success" });
+    notification.add("Deleted with success!", { variant: "success" });
     dependency(true);
     navigator("/app/financial");
   } else if (response.status === 401) {
     logout(notification, navigator);
   } else {
-    notification.add("La statistica non esiste!", {
+    notification.add("The stat does not exist!", {
       variant: "error",
     });
     navigator("/app/financial");

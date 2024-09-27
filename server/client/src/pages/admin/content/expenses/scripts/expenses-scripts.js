@@ -21,13 +21,13 @@ export const createAdditionalCost = async (notification, navigator, expense)=>{
             credentials: 'include'
         })
         if(response.status === 200){
-            notification.add('La nuova spesa è stata creata correttamente', { variant: 'success' });
+            notification.add('The new expense was added with success!', { variant: 'success' });
             navigator('/app/spese')
         } else if(response.status === 401){
             notification.add('Session is expired!', { variant: 'info' });
             logout(notification, navigator);
         } else {
-            notification.add('La richiesta e\' stata respinta!', { variant: 'error' });
+            notification.add('The request was rejected!', { variant: 'error' });
         }
     }
 }
@@ -48,7 +48,7 @@ export const getAllExpenses = async (notification, navigator, startDate, endDate
         notification.add('Session is expired!', { variant: 'info' });
         logout(notification, navigator);
     } else {
-        notification.add('La richiesta e\' stata respinta!', { variant: 'error' });
+        notification.add('The request was rejected!', { variant: 'error' });
     }
     return data;
 }
@@ -62,13 +62,13 @@ export const deleteExpense = async (notification, navigator, expenseId, dependen
         credentials: 'include'
     })
     if(response.status === 200){
-        notification.add('La spesa è stata cancellata correttamente', { variant: 'success' });
+        notification.add('The expense was deleted successfully!', { variant: 'success' });
         dependency(true)
     } else if(response.status === 401){
         notification.add('Session is expired!', { variant: 'info' });
         logout(notification, navigator);
     } else {
-        notification.add('La richiesta e\' stata respinta!', { variant: 'error' });
+        notification.add('The request was rejected!', { variant: 'error' });
     }
 }
 
@@ -84,10 +84,10 @@ export const getExpenseById = async (notification, navigator, expenseId)=>{
       if (response.status === 200) {
         data = await response.json();
       } else if (response.status === 401) {
-        notification.add('La sessione è finita')
+        notification.add('Session has expired')
         logout(notification, navigator);
       } else {
-        notification.add("La spesa non esiste!", { variant: "error" });
+        notification.add("This expense does not exist!", { variant: "error" });
         navigator("/app/spese/");
       }
       return data;
@@ -103,12 +103,12 @@ export const updateExpense = async (notification, navigator, costId, costInfo) =
         credentials: 'include'
     })
     if(response.status === 200){
-        notification.add('La spesa è stata aggiornata correttamente', { variant: 'success' });
+        notification.add('The expense was edited with success!', { variant: 'success' });
         navigator('/app/spese')
     } else if(response.status === 401){
         notification.add('Session is expired!', { variant: 'info' });
         logout(notification, navigator);
     } else {
-        notification.add('La richiesta e\' stata respinta!', { variant: 'error' });
+        notification.add('The request was rejected!', { variant: 'error' });
     }
 }

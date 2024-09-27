@@ -16,7 +16,7 @@ export const getEmployees = async (notification, navigator) => {
     logout(notification, navigator);
   } else {
     notification.add(
-      "Il server non è stato in grado di gestire la richiesta!",
+      "The server could not handle the request!",
       { variant: "error" }
     );
   }
@@ -26,7 +26,7 @@ export const getEmployees = async (notification, navigator) => {
 const validateEmployee = (notification, employeeInfo) => {
   if (!employeeInfo.name || !employeeInfo.surname || !employeeInfo.costPerDay) {
     notification.add(
-      "Ci sono alcune informazioni mancanti! Compila tutti i campi prima di inviare per favore!",
+      "There is missing information! Please complete all the fields@",
       { variant: "error" }
     );
     return false;
@@ -45,7 +45,7 @@ export const addEmployee = async (notification, navigator, employeeInfo) => {
       credentials: "include",
     });
     if (response.status === 201) {
-      notification.add("Il operaio è stato aggiunto correttamente!", {
+      notification.add("The employee was added successfully!", {
         variant: "success",
       });
       navigator("/app/employees/");
@@ -53,7 +53,7 @@ export const addEmployee = async (notification, navigator, employeeInfo) => {
       logout(notification, navigator);
     } else {
       notification.add(
-        "Il server non è stato in grado di gestire la richiesta!",
+        "The server could not handle the request!",
         {
           variant: "error",
         }
@@ -98,7 +98,7 @@ export const editEmployee = async (
       credentials: "include",
     });
     if (response.status === 200) {
-      notification.add("Il operaio è stato aggiornato con successo!", {
+      notification.add("The employee was added successfully!", {
         variant: "success",
       });
       navigator("/app/employees/");
@@ -106,7 +106,7 @@ export const editEmployee = async (
       logout(notification, navigator);
     } else {
       notification.add(
-        "Il server non è stato in grado di gestire la richiesta!",
+        "The server could not handle the request!",
         {
           variant: "error",
         }
@@ -130,14 +130,14 @@ export const deleteEmployee = async (
   });
   if (response.status === 200) {
     dependency(true);
-    notification.add("Il operaio è stato eliminato con successo!!", {
+    notification.add("The employee was deleted successfully!", {
       variant: "success",
     });
   } else if (response.status === 401) {
     logout(notification, navigator);
   } else {
     notification.add(
-      "Il server non è stato in grado di gestire la richiesta!",
+      "The server could not handle the request!",
       {
         variant: "error",
       }

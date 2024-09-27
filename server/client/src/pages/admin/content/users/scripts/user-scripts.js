@@ -81,7 +81,7 @@ export const changeUserStatus = async (
     credentials: "include",
   });
   if (response.status === 200) {
-    notification.add("L'utente è stato modificato con successo!", {
+    notification.add("User was edited with success!", {
       variant: "success",
     });
     dependency(true);
@@ -89,7 +89,7 @@ export const changeUserStatus = async (
     logout(notification, navigator);
   } else {
     notification.add(
-      "Il server non è stato in grado di gestire la richiesta!",
+      "The server could not handle the request!",
       {
         variant: "error",
       }
@@ -114,13 +114,13 @@ export const checkUserSectionAccess = async (
   } else if (response.status === 401) {
     logout(notification, navigator);
   } else if (response.status === 403) {
-    notification.add("Non hai accesso a questa sezione dell'applicazione!", {
+    notification.add("You do not have access to this section!", {
       variant: "info",
     });
     navigator("/app/dashboard");
   } else {
     notification.add(
-      "Il server non è stato in grado di gestire la richiesta!",
+      "The server could not handle the request!",
       {
         variant: "error",
       }

@@ -16,7 +16,7 @@ export const getUserInfo = async (notification, navigator) => {
     logout(notification, navigator);
   } else {
     notification.add(
-      "Il server non è stato in grado di gestire la richiesta!",
+      "The server could not handle the request!",
       { variant: "error" }
     );
   }
@@ -25,7 +25,7 @@ export const getUserInfo = async (notification, navigator) => {
 
 const validateUserInfo = (notification, newInfo) => {
   if ((!newInfo.name || !newInfo.surname, !newInfo.username)) {
-    notification.add("Ci sono alcune informazioni mancanti!", {
+    notification.add("There is missing information!", {
       variant: "error",
     });
     return false;
@@ -50,12 +50,12 @@ export const editUser = async (
       credentials: "include",
     });
     if (response.status === 200) {
-      notification.add("Modificato con successo!", { variant: "success" });
+      notification.add("Modified with success!", { variant: "success" });
       successAction();
     } else if (response.status === 401) {
       logout(notification, navigator);
     } else {
-      notification.add("Il server non è stato in grado di gestire la richiesta!", {
+      notification.add("The server could not handle the request!", {
         variant: "error",
       });
     }
@@ -78,7 +78,7 @@ export const changePassword = async (
     credentials: "include",
   });
   if (response.status === 200) {
-    notification.add("La password è stata modificata con successo!", { variant: "success" });
+    notification.add("The password was modified successfully!", { variant: "success" });
     successAction();
   } else if (response.status === 401) {
     logout(notification, navigator);

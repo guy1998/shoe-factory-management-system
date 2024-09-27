@@ -26,7 +26,7 @@ export const getProductsManufactured = async (notification, navigator) => {
     logout(notification, navigator);
   } else {
     notification.add(
-      "Il server non è stato in grado di gestire la richiesta!",
+      "The server could not handle the request!",
       {
         variant: "error",
       }
@@ -68,7 +68,7 @@ export const getWeeklyStats = async (notification, navigator) => {
     logout(notification, navigator);
   } else {
     notification.add(
-      "Il server non è stato in grado di gestire la richiesta!",
+      "The server could not handle the request!",
       {
         variant: "error",
       }
@@ -100,7 +100,7 @@ export const getMonthlyProfit = async (notification, navigator) => {
     logout(notification, navigator);
   } else {
     notification.add(
-      "Il server non è stato in grado di gestire la richiesta!",
+      "The server could not handle the request!",
       {
         variant: "error",
       }
@@ -135,7 +135,7 @@ export const getFierMonthlyProfit = async (notification, navigator) => {
     logout(notification, navigator);
   } else {
     notification.add(
-      "Il server non è stato in grado di gestire la richiesta!",
+      "The server could not handle the request!",
       {
         variant: "error",
       }
@@ -170,7 +170,7 @@ export const getMonthlyCost = async (notification, navigator) => {
     logout(notification, navigator);
   } else {
     notification.add(
-      "Il server non è stato in grado di gestire la richiesta!",
+      "The server could not handle the request!",
       {
         variant: "error",
       }
@@ -195,7 +195,7 @@ export const getMonthlyCost = async (notification, navigator) => {
     logout(notification, navigator);
   } else {
     notification.add(
-      "Il server non è stato in grado di gestire la richiesta!",
+      "The server could not handle the request!",
       {
         variant: "error",
       }

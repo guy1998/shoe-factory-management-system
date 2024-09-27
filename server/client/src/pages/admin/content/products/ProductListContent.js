@@ -84,7 +84,7 @@ function ProductListContent() {
         justifyContent="space-between"
       >
         <MDTypography variant="h6" color="white">
-          Prodotto
+          Products
         </MDTypography>
         <MDButton
           onClick={() => {

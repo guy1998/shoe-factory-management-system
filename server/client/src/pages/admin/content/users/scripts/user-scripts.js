@@ -81,11 +81,7 @@ export const changeUserStatus = async (
     credentials: "include",
   });
   if (response.status === 200) {
-<<<<<<< HEAD
-    notification.add("User was edited with success!", {
-=======
     notification.add("The user has been successfully modified!", {
->>>>>>> cc47fa094f6f15e6aa160c82b8bba8f973c049cc
       variant: "success",
     });
     dependency(true);
@@ -93,11 +89,7 @@ export const changeUserStatus = async (
     logout(notification, navigator);
   } else {
     notification.add(
-<<<<<<< HEAD
-      "The server could not handle the request!",
-=======
       "The server was unable to handle the request!",
->>>>>>> cc47fa094f6f15e6aa160c82b8bba8f973c049cc
       {
         variant: "error",
       }
@@ -122,21 +114,13 @@ export const checkUserSectionAccess = async (
   } else if (response.status === 401) {
     logout(notification, navigator);
   } else if (response.status === 403) {
-<<<<<<< HEAD
-    notification.add("You do not have access to this section!", {
-=======
     notification.add("You don't have access to this section of the app!", {
->>>>>>> cc47fa094f6f15e6aa160c82b8bba8f973c049cc
       variant: "info",
     });
     navigator("/app/dashboard");
   } else {
     notification.add(
-<<<<<<< HEAD
-      "The server could not handle the request!",
-=======
       "The server was unable to handle the request!",
->>>>>>> cc47fa094f6f15e6aa160c82b8bba8f973c049cc
       {
         variant: "error",
       }

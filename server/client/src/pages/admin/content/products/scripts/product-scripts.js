@@ -15,19 +15,16 @@ export const getProducts = async (notification, navigator) => {
   } else if (response.status === 401) {
     logout(notification, navigator);
   } else {
-    notification.add(
-      "Il server non è stato in grado di gestire la richiesta!",
-      {
-        variant: "error",
-      }
-    );
+    notification.add("The server was unable to handle the request!", {
+      variant: "error",
+    });
   }
   return data;
 };
 
 const validateProduct = (notification, product) => {
   if (!product.code || !product.costPerArticle) {
-    notification.add("Ci sono alcune informazioni mancanti!", {
+    notification.add("There are missing information", {
       variant: "error",
     });
     return false;
@@ -47,19 +44,16 @@ export const createProduct = async (notification, navigator, product) => {
       credentials: "include",
     });
     if (response.status === 201) {
-      notification.add("Il prodotto è stato aggiunto con successo!", {
+      notification.add("The statistic was created successfully!", {
         variant: "success",
       });
       navigator("/app/products");
     } else if (response.status === 401) {
       logout(notification, navigator);
     } else {
-      notification.add(
-        "Il server non è stato in grado di gestire la richiesta!",
-        {
-          variant: "error",
-        }
-      );
+      notification.add("The server was unable to handle the request!", {
+        variant: "error",
+      });
     }
   }
 };
@@ -78,19 +72,16 @@ export const deleteProduct = async (
     credentials: "include",
   });
   if (response.status === 200) {
-    notification.add("Il prodotto è stato eliminato con successo!", {
+    notification.add("The product was deleted successfully!", {
       variant: "success",
     });
     dependency(true);
   } else if (response.status === 401) {
     logout(notification, navigator);
   } else {
-    notification.add(
-      "Il server non è stato in grado di gestire la richiesta!",
-      {
-        variant: "error",
-      }
-    );
+    notification.add("The server was unable to handle the request!", {
+      variant: "error",
+    });
   }
 };
 
@@ -108,7 +99,7 @@ export const getProductInfo = async (notification, navigator, productId) => {
   } else if (response.status === 401) {
     logout(notification, navigator);
   } else {
-    notification.add("Il prodotto non esiste!", {
+    notification.add("The statistic does not exist!", {
       variant: "error",
     });
     navigator("/app/products");
@@ -132,17 +123,16 @@ export const editProduct = async (
       credentials: "include",
     });
     if (response.status === 200) {
-      notification.add("Il prodotto è stato aggiornato con successo!", {
+      notification.add("The statistic was updated successfully", {
         variant: "success",
       });
       navigator("/app/products/");
     } else if (response.status === 401) {
       logout(notification, navigator);
     } else {
-      notification.add(
-        "Il server non è stato in grado di gestire la richiesta!",
-        { variant: "error" }
-      );
+      notification.add("The server was unable to handle the request!", {
+        variant: "error",
+      });
     }
   }
 };

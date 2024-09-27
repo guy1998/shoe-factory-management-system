@@ -105,12 +105,12 @@ function EditContent() {
           color: darkMode ? "white" : "black",
         }}
       >
-        <h3>Crea una nuova spesa</h3>
+        <h3>Create a new expense</h3>
       </div>
       <div style={{ width: "90%", margin: "0 auto" }}>
         <TextField
           id="outlined-basic"
-          label="Nome della spesa"
+          label="Name of the expense"
           variant="outlined"
           fullWidth
           style={{ margin: "10px 0" }}
@@ -118,7 +118,7 @@ function EditContent() {
           onChange={(event) => setName(event.target.value)}
         />
         <TextField
-          label="Quantita"
+          label="Quantity"
           value={cost}
           disabled={false}
           onChange={updateCost}
@@ -134,7 +134,7 @@ function EditContent() {
         {!isMonthly && (
           <LocalizationProvider dateAdapter={AdapterDayjs} adapterLocale="it">
             <DemoContainer components={["DateCalendar"]}>
-              <DemoItem label="La data della spesa">
+              <DemoItem label="The date of the expense">
                 <DateCalendar
                   value={date}
                   onChange={(newValue) => setDate(newValue)}
@@ -167,7 +167,7 @@ function EditContent() {
           }}
         >
           <Icon style={{ marginRight: "5px" }}>check</Icon>
-          Conferma
+          Conferm
         </MDButton>
         <MDButton
           color="primary"
@@ -176,7 +176,7 @@ function EditContent() {
           }}
         >
           <Icon style={{ marginRight: "5px" }}>close</Icon>
-          Annulla
+          Cancel
         </MDButton>
       </div>
     </MDBox>

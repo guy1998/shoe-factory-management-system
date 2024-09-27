@@ -38,7 +38,7 @@ function ListContent() {
       ),
       date: (
         <MDTypography>
-          {expense.isMonthly ? "Spese mensile" : expense.date.slice(0, 10)}
+          {expense.isMonthly ? "Monthly expenses" : expense.date.slice(0, 10)}
         </MDTypography>
       ),
       amount: (
@@ -70,10 +70,10 @@ function ListContent() {
     };
   });
   const columns = [
-    { Header: "Nome della spesa", accessor: "name", align: "left" },
-    { Header: "Data", accessor: "date", align: "center" },
-    { Header: "Quantita", accessor: "amount", align: "center" },
-    { Header: "Azioni", accessor: "actions", align: "center" },
+    { Header: "Name of the expense", accessor: "name", align: "left" },
+    { Header: "Date", accessor: "date", align: "center" },
+    { Header: "Quantity", accessor: "amount", align: "center" },
+    { Header: "Actions", accessor: "actions", align: "center" },
   ];
 
   useEffect(() => {
@@ -98,7 +98,7 @@ function ListContent() {
         justifyContent="space-between"
       >
         <MDTypography variant="h6" color="white">
-          Spese
+          Expense
         </MDTypography>
         <div
           style={{

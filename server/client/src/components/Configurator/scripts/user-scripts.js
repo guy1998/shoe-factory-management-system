@@ -25,7 +25,11 @@ export const getUserInfo = async (notification, navigator) => {
 
 const validateUserInfo = (notification, newInfo) => {
   if ((!newInfo.name || !newInfo.surname, !newInfo.username)) {
+<<<<<<< HEAD
     notification.add("There is missing information!", {
+=======
+    notification.add("There are missing information", {
+>>>>>>> cc47fa094f6f15e6aa160c82b8bba8f973c049cc
       variant: "error",
     });
     return false;
@@ -50,7 +54,7 @@ export const editUser = async (
       credentials: "include",
     });
     if (response.status === 200) {
-      notification.add("Modified with success!", { variant: "success" });
+      notification.add("Edited successfully!", { variant: "success" });
       successAction();
     } else if (response.status === 401) {
       logout(notification, navigator);

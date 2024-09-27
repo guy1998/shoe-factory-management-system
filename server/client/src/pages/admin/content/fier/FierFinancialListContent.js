@@ -80,11 +80,11 @@ function FierFinancialListContent() {
     };
   });
   const columns = [
-    { Header: "Data della relazione", accessor: "date", align: "left" },
-    { Header: "Profitto", accessor: "profit", align: "center" },
-    { Header: "Guadagnato", accessor: "earned", align: "center" },
-    { Header: "Costo di produzione", accessor: "cost", align: "center" },
-    { Header: "Azioni", accessor: "actions", align: "center" },
+    { Header: "Date of the report", accessor: "date", align: "left" },
+    { Header: "Profit", accessor: "profit", align: "center" },
+    { Header: "Earned", accessor: "earned", align: "center" },
+    { Header: "Production cost", accessor: "cost", align: "center" },
+    { Header: "Actions", accessor: "actions", align: "center" },
   ];
 
   useEffect(() => {
@@ -111,21 +111,21 @@ function FierFinancialListContent() {
         justifyContent="space-between"
       >
         <MDTypography variant="h6" color="white">
-          Relazioni finanziarie Fier
+        Fier's Financial Reports
         </MDTypography>
         <div
           style={{
             display: "flex",
             justifyContent: "space-between",
             width: isMobile ? "65px" : "220px",
-            height: isMobile ? "90px" : 'auto',
+            height: isMobile ? "90px" : "auto",
             flexDirection: isMobile ? "column" : "row",
           }}
         >
           <MDButton
             onClick={() => {
               if (checkIfToday(stats)) {
-                notification.add("Oggi è già stato pubblicato un rapporto!", {
+                notification.add("A report has already been published today!", {
                   variant: "info",
                 });
               } else {
@@ -134,7 +134,7 @@ function FierFinancialListContent() {
             }}
           >
             <Icon style={{ marginRight: "5px" }}>analytics</Icon>
-            {isMobile ? "" : "Crea nuovo"}
+            {isMobile ? "" : "Crete new"}
           </MDButton>
           <FilterModal
             startDate={startDate}

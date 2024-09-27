@@ -112,10 +112,10 @@ function FinancialCreateContent() {
     };
   });
   const columns = [
-    { Header: "Codice", accessor: "code", align: "left" },
-    { Header: "Costo", accessor: "cost", align: "center" },
-    { Header: "Quantità", accessor: "quantity", align: "center" },
-    { Header: "Subtotale", accessor: "subtotal", align: "center" },
+    { Header: "Code", accessor: "code", align: "left" },
+    { Header: "Cost", accessor: "cost", align: "center" },
+    { Header: "Quantity", accessor: "quantity", align: "center" },
+    { Header: "Subtotal", accessor: "subtotal", align: "center" },
     { Header: "", accessor: "remove", align: "center" },
   ];
   const onSelectProduct = (event) => {
@@ -130,7 +130,7 @@ function FinancialCreateContent() {
         (product) => product.code === selected.code
       );
       if (exists.length)
-        notification.add("Questo prodotto è già selezionato!", {
+        notification.add("This product was already selected!", {
           variant: "info",
         });
       else {
@@ -150,7 +150,7 @@ function FinancialCreateContent() {
       if (data) setProductionCost(data);
       else
         notification.add(
-          "Sembra che non ci siano ancora informazioni sui operai e sui loro costi. Aggiorna i operai per continuare",
+          "It seems that there is still no information on the workers and their costs. Upgrade workers to continue",
           { variant: "info" }
         );
     });
@@ -174,7 +174,7 @@ function FinancialCreateContent() {
           alignItems="flex-start"
         >
           <MDTypography variant="h6" color="white">
-            Seleziona i prodotti
+            Seelct the products
           </MDTypography>
           <FormControl
             style={{ width: isMobile ? "100%" : "400px", height: "50px" }}
@@ -183,7 +183,7 @@ function FinancialCreateContent() {
               id="demo-simple-select-label"
               style={{ color: "white" }}
             >
-              Prodotti
+              Products
             </InputLabel>
             <Select
               labelId="demo-simple-select-label"

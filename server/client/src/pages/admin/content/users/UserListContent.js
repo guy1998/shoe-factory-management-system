@@ -41,10 +41,10 @@ function UserListContent() {
     };
   });
   const columns = [
-    { Header: "Nome", accessor: "name", align: "center" },
-    { Header: "Cognome", accessor: "surname", align: "center" },
+    { Header: "Name", accessor: "name", align: "center" },
+    { Header: "Surname", accessor: "surname", align: "center" },
     { Header: "Username", accessor: "username", align: "center" },
-    { Header: "Azioni", accessor: "actions", align: "center" },
+    { Header: "Actions", accessor: "actions", align: "center" },
   ];
 
   useEffect(() => {
@@ -69,7 +69,7 @@ function UserListContent() {
         justifyContent="space-between"
       >
         <MDTypography variant="h6" color="white">
-          Gli utenti
+          Users
         </MDTypography>
         <MDButton
           onClick={() => {
@@ -77,7 +77,7 @@ function UserListContent() {
           }}
         >
           <Icon style={{ marginRight: "5px" }}>person_add</Icon>
-          {isMobile ? "" : "Crea nuovo"}
+          {isMobile ? "" : "Create new"}
         </MDButton>
       </MDBox>
       <MDBox pt={3}>

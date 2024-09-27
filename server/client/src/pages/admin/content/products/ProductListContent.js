@@ -57,9 +57,9 @@ function ProductListContent() {
     };
   });
   const columns = [
-    { Header: "Codice articolo", accessor: "name", align: "left" },
-    { Header: "Costo per articolo", accessor: "cost", align: "center" },
-    { Header: "Azioni", accessor: "actions", align: "center" },
+    { Header: "Code of article", accessor: "name", align: "left" },
+    { Header: "Cost of article", accessor: "cost", align: "center" },
+    { Header: "Actions", accessor: "actions", align: "center" },
   ];
 
   useEffect(() => {
@@ -92,7 +92,7 @@ function ProductListContent() {
           }}
         >
           <Icon style={{ marginRight: "5px" }}>category</Icon>
-          {isMobile ? "" : "Crea nuovo"}
+          {isMobile ? "" : "Create new"}
         </MDButton>
       </MDBox>
       <MDBox pt={3}>

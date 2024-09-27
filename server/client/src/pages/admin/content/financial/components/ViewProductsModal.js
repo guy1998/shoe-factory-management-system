@@ -47,9 +47,9 @@ function ViewProductsModal({ products }) {
     };
   });
   const columns = [
-    { Header: "Codice", accessor: "code", align: "left" },
-    { Header: "Quantità", accessor: "quantity", align: "center" },
-    { Header: "Prezzo dell'articolo", accessor: "price", align: "center" },
+    { Header: "Code", accessor: "code", align: "left" },
+    { Header: "Quantity", accessor: "quantity", align: "center" },
+    { Header: "Article's price", accessor: "price", align: "center" },
   ];
 
   return (
@@ -60,7 +60,7 @@ function ViewProductsModal({ products }) {
         onClick={handleOpen}
       >
         <Icon style={{ marginRight: "5px" }}>manage_search</Icon>
-        Visualizza i articoli{" "}
+        View products{" "}
       </MDButton>
       <Modal
         open={open}
@@ -83,7 +83,7 @@ function ViewProductsModal({ products }) {
               justifyContent="space-between"
             >
               <MDTypography variant="h6" color="white">
-                Articoli
+                Articles
               </MDTypography>
             </MDBox>
             <MDBox pt={3}>

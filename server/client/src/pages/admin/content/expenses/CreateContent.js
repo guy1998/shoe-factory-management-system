@@ -92,7 +92,7 @@ function CreateContent() {
           color: darkMode ? "white" : "black",
         }}
       >
-        <h3>Crea una nuova spesa</h3>
+        <h3>Create a new expense</h3>
       </div>
       <div style={{ width: "90%", margin: "0 auto" }}>
         <TextField
@@ -126,7 +126,7 @@ function CreateContent() {
                 onChange={() => setIsMonthly(!isMonthly)}
               />
             }
-            label="Seleziona questa casella se si tratta di una spesa mensile."
+            label="Check this box if it is a monthly expense."
           />
         </FormGroup>
         {!isMonthly && (
@@ -166,7 +166,7 @@ function CreateContent() {
           }}
         >
           <Icon style={{ marginRight: "5px" }}>check</Icon>
-          Conferma
+          Conferm
         </MDButton>
         <MDButton
           color="primary"
@@ -175,7 +175,7 @@ function CreateContent() {
           }}
         >
           <Icon style={{ marginRight: "5px" }}>close</Icon>
-          Annulla
+          Cancel
         </MDButton>
       </div>
     </MDBox>

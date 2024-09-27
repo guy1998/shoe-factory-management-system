@@ -15,16 +15,9 @@ export const getEmployees = async (notification, navigator) => {
   } else if (response.status === 401) {
     logout(notification, navigator);
   } else {
-<<<<<<< HEAD
-    notification.add(
-      "The server could not handle the request!",
-      { variant: "error" }
-    );
-=======
     notification.add("The server was unable to handle the request!", {
       variant: "error",
     });
->>>>>>> cc47fa094f6f15e6aa160c82b8bba8f973c049cc
   }
   return data;
 };
@@ -32,11 +25,7 @@ export const getEmployees = async (notification, navigator) => {
 const validateEmployee = (notification, employeeInfo) => {
   if (!employeeInfo.name || !employeeInfo.surname || !employeeInfo.costPerDay) {
     notification.add(
-<<<<<<< HEAD
-      "There is missing information! Please complete all the fields@",
-=======
       "There are information missiong! Please fill in all the fields before submitting!",
->>>>>>> cc47fa094f6f15e6aa160c82b8bba8f973c049cc
       { variant: "error" }
     );
     return false;
@@ -55,29 +44,16 @@ export const addEmployee = async (notification, navigator, employeeInfo) => {
       credentials: "include",
     });
     if (response.status === 201) {
-<<<<<<< HEAD
-      notification.add("The employee was added successfully!", {
-=======
       notification.add("The worker has been added correctly!", {
->>>>>>> cc47fa094f6f15e6aa160c82b8bba8f973c049cc
         variant: "success",
       });
       navigator("/app/employees/");
     } else if (response.status === 401) {
       logout(notification, navigator);
     } else {
-<<<<<<< HEAD
-      notification.add(
-        "The server could not handle the request!",
-        {
-          variant: "error",
-        }
-      );
-=======
       notification.add("The server was unable to handle the request!", {
         variant: "error",
       });
->>>>>>> cc47fa094f6f15e6aa160c82b8bba8f973c049cc
     }
   }
 };

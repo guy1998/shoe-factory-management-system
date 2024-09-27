@@ -29,18 +29,9 @@ export const getAllFierFinancials = async (
   } else if (response.status === 401) {
     logout(notification, navigator);
   } else {
-<<<<<<< HEAD
-    notification.add(
-      "The server could not handle the request!",
-      {
-        variant: "error",
-      }
-    );
-=======
     notification.add("The server was unable to handle the request!", {
       variant: "error",
     });
->>>>>>> cc47fa094f6f15e6aa160c82b8bba8f973c049cc
   }
   return data;
 };
@@ -59,29 +50,16 @@ export const createFierStatistic = async (
     credentials: "include",
   });
   if (response.status === 201) {
-<<<<<<< HEAD
-    notification.add("The stat was added with success!", {
-=======
     notification.add("The statistic was created successfully", {
->>>>>>> cc47fa094f6f15e6aa160c82b8bba8f973c049cc
       variant: "success",
     });
     navigator("/app/fier");
   } else if (response.status === 401) {
     logout(notification, navigator);
   } else {
-<<<<<<< HEAD
-    notification.add(
-      "The server could not handle the request!",
-      {
-        variant: "error",
-      }
-    );
-=======
     notification.add("The server was unable to handle the request!", {
       variant: "error",
     });
->>>>>>> cc47fa094f6f15e6aa160c82b8bba8f973c049cc
   }
 };
 

@@ -31,18 +31,9 @@ export const getAllFinancials = async (
   } else if (response.status === 401) {
     logout(notification, navigator);
   } else {
-<<<<<<< HEAD
-    notification.add(
-      "The server could not handle the request!",
-      {
-        variant: "error",
-      }
-    );
-=======
     notification.add("The server was unable to handle the request!", {
       variant: "error",
     });
->>>>>>> cc47fa094f6f15e6aa160c82b8bba8f973c049cc
   }
   return data;
 };
@@ -75,11 +66,7 @@ export const getAllExpenses = async (
     notification.add("Session is expired!", { variant: "info" });
     logout(notification, navigator);
   } else {
-<<<<<<< HEAD
-      notification.add('The server could not handle the request!', { variant: 'error' });
-=======
     notification.add("The request was rejected!", { variant: "error" });
->>>>>>> cc47fa094f6f15e6aa160c82b8bba8f973c049cc
   }
   const expense = data.reduce((acc, expense) => {
     return parseFloat(acc) + parseFloat(expense.quantity.$numberDecimal);
@@ -97,29 +84,16 @@ export const createStatistic = async (notification, navigator, products) => {
     credentials: "include",
   });
   if (response.status === 201) {
-<<<<<<< HEAD
-    notification.add("The stat was added with success!", {
-=======
     notification.add("The statistic was created successfully", {
->>>>>>> cc47fa094f6f15e6aa160c82b8bba8f973c049cc
       variant: "success",
     });
     navigator("/app/financial");
   } else if (response.status === 401) {
     logout(notification, navigator);
   } else {
-<<<<<<< HEAD
-    notification.add(
-      "The server could not handle the request!",
-      {
-        variant: "error",
-      }
-    );
-=======
     notification.add("The server was unable to handle the request!", {
       variant: "error",
     });
->>>>>>> cc47fa094f6f15e6aa160c82b8bba8f973c049cc
   }
 };
 
@@ -138,11 +112,7 @@ export const editStatistic = async (
     credentials: "include",
   });
   if (response.status === 200) {
-<<<<<<< HEAD
-    notification.add("The stat was edited with success!", {
-=======
     notification.add("The statistic was updated successfully", {
->>>>>>> cc47fa094f6f15e6aa160c82b8bba8f973c049cc
       variant: "success",
     });
     navigator("/app/financial");

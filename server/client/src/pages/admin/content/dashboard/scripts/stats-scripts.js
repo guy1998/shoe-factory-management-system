@@ -28,18 +28,9 @@ export const getProductsManufactured = async (notification, navigator) => {
   } else if (response.status === 401) {
     logout(notification, navigator);
   } else {
-<<<<<<< HEAD
-    notification.add(
-      "The server could not handle the request!",
-      {
-        variant: "error",
-      }
-    );
-=======
     notification.add("The server was unable to handle the request!", {
       variant: "error",
     });
->>>>>>> cc47fa094f6f15e6aa160c82b8bba8f973c049cc
   }
   const productsManufactured = data.reduce((acc, stat) => {
     return acc + stat.products.length;
@@ -76,18 +67,9 @@ export const getWeeklyStats = async (notification, navigator) => {
   } else if (response.status === 401) {
     logout(notification, navigator);
   } else {
-<<<<<<< HEAD
-    notification.add(
-      "The server could not handle the request!",
-      {
-        variant: "error",
-      }
-    );
-=======
     notification.add("The server was unable to handle the request!", {
       variant: "error",
     });
->>>>>>> cc47fa094f6f15e6aa160c82b8bba8f973c049cc
   }
   return data;
 };
@@ -114,18 +96,9 @@ export const getMonthlyProfit = async (notification, navigator) => {
   } else if (response.status === 401) {
     logout(notification, navigator);
   } else {
-<<<<<<< HEAD
-    notification.add(
-      "The server could not handle the request!",
-      {
-        variant: "error",
-      }
-    );
-=======
     notification.add("The server was unable to handle the request!", {
       variant: "error",
     });
->>>>>>> cc47fa094f6f15e6aa160c82b8bba8f973c049cc
   }
   const profit = data.reduce((acc, stat) => {
     return parseFloat(acc) + parseFloat(stat.profit.$numberDecimal);
@@ -155,18 +128,9 @@ export const getFierMonthlyProfit = async (notification, navigator) => {
   } else if (response.status === 401) {
     logout(notification, navigator);
   } else {
-<<<<<<< HEAD
-    notification.add(
-      "The server could not handle the request!",
-      {
-        variant: "error",
-      }
-    );
-=======
     notification.add("The server was unable to handle the request!", {
       variant: "error",
     });
->>>>>>> cc47fa094f6f15e6aa160c82b8bba8f973c049cc
   }
   const profit = data.reduce((acc, stat) => {
     return parseFloat(acc) + parseFloat(stat.profit.$numberDecimal);

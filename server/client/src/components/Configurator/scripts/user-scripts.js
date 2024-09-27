@@ -25,11 +25,7 @@ export const getUserInfo = async (notification, navigator) => {
 
 const validateUserInfo = (notification, newInfo) => {
   if ((!newInfo.name || !newInfo.surname, !newInfo.username)) {
-<<<<<<< HEAD
-    notification.add("There is missing information!", {
-=======
     notification.add("There are missing information", {
->>>>>>> cc47fa094f6f15e6aa160c82b8bba8f973c049cc
       variant: "error",
     });
     return false;
